@@ -27,7 +27,7 @@ public class UserService {
         List<String> strings = FileUtil.readFileList(getClass().getResource("/").getPath() + "user.txt");
         for (String content : strings) {
             String[] split = content.split(",");
-            if (split.length == 4) {
+            if (split.length == 3) {
                 if (username.equals(split[0]) && password.equals(split[1])) {
                     return true;
                 }
