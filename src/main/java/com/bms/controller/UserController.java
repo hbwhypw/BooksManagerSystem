@@ -46,16 +46,11 @@ public class UserController {
             //将用户对象添加到Session中
             session.setAttribute("USER_SESSION", user);
             //重定向到主页面，调用toMain方法
-            return "redirect:main";
+            return "redirect:/main";
         } else {
             model.addAttribute("msg", "用户名或密码错误，请重新登录！");
         }
         return "login";
-    }
-
-    @RequestMapping(value = "/main")
-    public String toMain() {
-        return "main";
     }
 
     @RequestMapping(value = "/logout")
@@ -63,7 +58,7 @@ public class UserController {
         //清除session
         session.invalidate();
         //重定向到登录页面的跳转方法
-        return "redirect:user/login";
+        return "user/login";
     }
 
     @RequestMapping("register")

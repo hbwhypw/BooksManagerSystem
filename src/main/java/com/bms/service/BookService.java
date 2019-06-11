@@ -38,6 +38,14 @@ public class BookService {
 
     }
 
+    public void update(Book book) {
+        String path = getClass().getResource("/").getPath() + "user.txt";
+        //  TODO 行号
+        String lineNumber = FileUtil.readFile(path, 0);
+
+
+    }
+
     public void delete(Integer id) {
         String path = getClass().getResource("/").getPath() + "user.txt";
 
