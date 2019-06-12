@@ -8,12 +8,11 @@
     <title>修改图书信息</title>
 </head>
 <body>
-<form action="${path}/book/edit" method="post">
-    <input type="hidden" value="${book.id}">
-    书名：<input name="bookName" value="${book.bookName}"><br>
-    作者：<input name="author" value="${book.author}"><br>
-    简介：<input name="introduction" value="${book.introduction}"><br>
-    创建时间：<input name="createTime" value="${book.createTime}"><br>
+<form action="${path}/book/add" method="post">
+    书名：<input name="bookName"><br>
+    作者：<input name="author"><br>
+    简介：<input name="introduction"><br>
+    创建时间：<input name="createTime"><br>
     <input type="submit" value="保存">
 </form>
 </body>

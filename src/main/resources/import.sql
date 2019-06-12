@@ -1,0 +1,1 @@
+INSERT INTO USER (username, password, gender, birthday) values ('spp', '123456', 1, '1998-07-13');

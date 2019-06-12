@@ -1,34 +1,53 @@
 package com.bms.controller;
 
-import com.bms.common.Result;
 import com.bms.domain.Book;
 import com.bms.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("book")
+@RequestMapping("/book")
 public class BookController {
     @Autowired
     BookService bookService;
 
     @RequestMapping("list")
-    public Result<List<Book>> getList() {
-        return Result.success(bookService.getBookList());
+    public String getList(Model model) {
+        List<Book> list = bookService.getBookList();
+        model.addAttribute("list", list);
+        return "book/list";
     }
 
+    @RequestMapping("/toList")
+    public String toList() {
+        return "redirect:/main";
+    }
 
-
-    @GetMapping("edit")
-    public String edit() {
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        Book book = bookService.getOne(id);
+        model.addAttribute("book", book);
         return "book/edit";
     }
-    @PostMapping("edit")
+
+    @PostMapping("/edit")
     public String edit(Book book) {
         bookService.update(book);
+        return "redirect:/main";
+    }
+
+    @GetMapping("/add")
+    public String add() {
+        return "book/add";
+    }
+
+    @PostMapping("/add")
+    public String add(@ModelAttribute Book book) {
+        bookService.add(book);
         return "redirect:/main";
     }
 

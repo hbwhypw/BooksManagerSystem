@@ -23,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         System.out.println(uri);
         //UTL:除了login.jsp是可以公开访问的，其他的URL都进行拦截控制
-        if (uri.indexOf("/user/login") >= 0 || "/".equals(uri)) {
+        if (uri.indexOf("/user/login") >= 0 || "/".equals(uri) || "/h2-console".equals(uri)) {
             return true;
         }
         //获取session

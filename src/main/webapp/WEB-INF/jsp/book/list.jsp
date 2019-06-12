@@ -8,8 +8,9 @@
     <title>图书管理</title>
 </head>
 <body>
-当前用户：${USER_SESSION.username}<a href="${path}/user/logout">退出</a>
-
+当前用户：${USER_SESSION.username}<br>
+<a href="${path}/user/logout">退出</a><br>
+<a href="${path}/book/add">新增</a><br>
 <table id="bookTable">
     <thead>
     <tr>
@@ -21,15 +22,15 @@
     </tr>
     </thead>
     <tbody id="">
-        <c:if test="${list} != null">
-            <c:forEach items="${list}" var="item">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="${path}/book/edit">修改</a><a href="${path}/book/delete">删除</a></td>
-            </c:forEach>
-        </c:if>
+        <c:forEach items="${list}" var="item">
+        <tr>
+            <td>${item.bookName}</td>
+            <td>${item.author}</td>
+            <td>${item.introduction}</td>
+            <td>${item.createTime}</td>
+            <td><a href="${path}/book/edit/${item.id}">修改</a>&nbsp;<a href="${path}/book/delete">删除</a></td>
+        </tr>
+        </c:forEach>
     </tbody>
 </table>
 </body>

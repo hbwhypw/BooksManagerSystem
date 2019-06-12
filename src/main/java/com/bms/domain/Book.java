@@ -4,27 +4,47 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
+
+/**
+ * @author ypw
+ * @date 2019-06-12
+ */
 @Data
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Book {
+@Entity
+@Table(name = "book")
+public class Book implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     /**
      * 书名
      */
+    @Column(nullable = false)
     private String bookName;
     /**
-     * 作者
+         * 作者
      */
+    @Column(nullable = false)
     private String author;
     /**
      * 简介
      */
+    @Column(nullable = false)
     private String introduction;
     /**
      * 创建时间
      */
-    private String createTime;
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate createTime;
+
 }

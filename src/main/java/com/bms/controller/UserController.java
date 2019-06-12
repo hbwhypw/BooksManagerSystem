@@ -1,9 +1,9 @@
 package com.bms.controller;
 
 
-import com.bms.common.Result;
 import com.bms.domain.User;
 import com.bms.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,19 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
+@Slf4j
 @Controller
 @RequestMapping("user")
 public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @RequestMapping("getList")
-    public Result<List<User>> getList() {
-        return Result.success(userService.getUserList());
-    }
 
     /**
      * 向用户登录页面跳转
@@ -62,8 +59,12 @@ public class UserController {
     }
 
     @RequestMapping("register")
-    public Result register(String username, String password, Integer gender) {
-        return Result.success(userService.register(new User(username, password, gender)));
+    public String register(String username, String password, Integer gender, String date) throws Exception {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+        LocalDate birthday = LocalDate.parse(date, formatter);
+        User user = new User(null, username, password, gender, birthday);
+        userService.register(user);
+        return "user/login";
     }
 
 

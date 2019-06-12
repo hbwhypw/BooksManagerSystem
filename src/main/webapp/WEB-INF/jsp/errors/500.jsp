@@ -4,6 +4,6 @@
     <title>500</title>
 </head>
 <body>
-    找不到页面！
+    出错了！
 </body>
 </html>
