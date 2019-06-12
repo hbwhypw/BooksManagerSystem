@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
+    private Integer id;
     /**
      * 书名
      */

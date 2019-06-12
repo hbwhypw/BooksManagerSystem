@@ -20,6 +20,8 @@ public class BookController {
         return Result.success(bookService.getBookList());
     }
 
+
+
     @GetMapping("edit")
     public String edit() {
         return "book/edit";

@@ -8,8 +8,8 @@
 <body>
 ${msg}
 <form action="${path}/user/login" method="post">
-    用户名：<input type="text" name="username"><br>
-    密&nbsp;&nbsp;&nbsp;码:<input type="password" name="password"><br>
+    用户名：<input type="text" name="username" value="spp"><br>
+    密&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" value="123456"><br>
     <input type="submit" value="登录">
 </form>
 </body>

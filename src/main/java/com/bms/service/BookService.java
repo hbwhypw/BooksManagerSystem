@@ -17,8 +17,8 @@ public class BookService {
         List<String> strings = FileUtil.readFileList(path, 0);
         for (String content : strings) {
             String[] split = content.split(",");
-            if (split.length == 4) {
-                list.add(new Book(split[0], split[1], split[2], split[3]));
+            if (split.length == 5) {
+                list.add(new Book(Integer.parseInt(split[0]), split[1], split[2], split[3], split[4]));
             }
         }
         return list;
@@ -28,8 +28,11 @@ public class BookService {
         String path = getClass().getResource("/").getPath() + "user.txt";
         //  TODO 行号
         String lineNumber = FileUtil.readFile(path, 0);
+        if (lineNumber == null || "".equals(lineNumber)) {
+            lineNumber = "0";
+        }
         StringBuilder sb = new StringBuilder();
-        sb.append(Integer.parseInt(lineNumber)).append(",")
+        sb.append(Integer.parseInt(lineNumber) + 1).append(",")
                 .append(book.getBookName()).append(",")
                 .append(book.getAuthor()).append(",")
                 .append(book.getIntroduction()).append(",")
