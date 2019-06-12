@@ -9,11 +9,11 @@
 </head>
 <body>
 <form action="${path}/book/edit" method="post">
-    <input type="hidden" value="${book.id}">
+    <input name="id" type="hidden" value="${book.id}">
     书名：<input name="bookName" value="${book.bookName}"><br>
     作者：<input name="author" value="${book.author}"><br>
     简介：<input name="introduction" value="${book.introduction}"><br>
-    创建时间：<input name="createTime" value="${book.createTime}"><br>
+    <input name="createTime" type="hidden" value="${book.createTime}"><br>
     <input type="submit" value="保存">
 </form>
 </body>

@@ -18,6 +18,7 @@
         <th>标题</th>
         <th>介绍</th>
         <th>创建时间</th>
+        <th>修改时间</th>
         <th>操作</th>
     </tr>
     </thead>
@@ -28,7 +29,8 @@
             <td>${item.author}</td>
             <td>${item.introduction}</td>
             <td>${item.createTime}</td>
-            <td><a href="${path}/book/edit/${item.id}">修改</a>&nbsp;<a href="${path}/book/delete">删除</a></td>
+            <td>${item.updateTime}</td>
+            <td><a href="${path}/book/edit/${item.id}">修改</a>&nbsp;<a href="${path}/book/delete/${item.id}">删除</a></td>
         </tr>
         </c:forEach>
     </tbody>

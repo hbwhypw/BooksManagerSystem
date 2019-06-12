@@ -12,7 +12,6 @@
     书名：<input name="bookName"><br>
     作者：<input name="author"><br>
     简介：<input name="introduction"><br>
-    创建时间：<input name="createTime"><br>
     <input type="submit" value="保存">
 </form>
 </body>

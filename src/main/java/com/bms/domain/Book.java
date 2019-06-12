@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -44,7 +46,16 @@ public class Book implements Serializable {
      * 创建时间
      */
     @Column(nullable = false)
+    @CreatedDate
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate createTime;
+
+    /**
+     * 创建时间
+     */
+    @Column(nullable = true)
+    @LastModifiedDate
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate updateTime;
 
 }

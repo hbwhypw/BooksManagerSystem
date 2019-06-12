@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -36,6 +37,7 @@ public class BookController {
 
     @PostMapping("/edit")
     public String edit(Book book) {
+        book.setUpdateTime(LocalDate.now());
         bookService.update(book);
         return "redirect:/main";
     }
@@ -47,6 +49,7 @@ public class BookController {
 
     @PostMapping("/add")
     public String add(@ModelAttribute Book book) {
+        book.setCreateTime(LocalDate.now());
         bookService.add(book);
         return "redirect:/main";
     }
