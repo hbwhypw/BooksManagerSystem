@@ -10,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author 杨彭伟
  * @date 2019-06-09 10:02
@@ -37,7 +40,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**");
+        List<String> excludePaths = new ArrayList<>();
+        excludePaths.add("/");
+        excludePaths.add("/user/login");
+        excludePaths.add("/h2-console**");
+        excludePaths.add("/static/**");
+        excludePaths.add("/js/**");
+        excludePaths.add("/css/**");
+        registry.addInterceptor(new LoginInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns(excludePaths);
     }
 
     /**
