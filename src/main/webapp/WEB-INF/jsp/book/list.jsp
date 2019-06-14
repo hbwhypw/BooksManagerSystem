@@ -14,8 +14,11 @@
 </head>
 <body>
 <div class="box">
-    <div class="title">当前用户：${USER_SESSION.username}<a href="${path}/user/logout">退出</a><br></div>
-    <div class="title">图书的添加、删除、修改、查找</div>
+    <div class="p-3 mb-2 bg-primary text-white">
+        <span class="mr-0 mr-md-2">当前用户：${USER_SESSION.username}</span>
+        <span class="mr-md-6"> </span>
+        <a class="mr-md-2 text-dark" href="${path}/user/logout">退出</a>
+    </div>
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
         <div class="container content_width">
@@ -70,6 +73,9 @@
         </table>
     </div>
 </div>
+<script>
+    var path = "${path}";
+</script>
 <script src="${path}/js/mejs.js"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 $(function () {
 
+    $("#new_add").click(function () {
+        window.location.href = path + "/book/add";
+    });
+
     $('#add_btn').click(function () {
         methods.addHandle();
     });

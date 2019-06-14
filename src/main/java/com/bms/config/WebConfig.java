@@ -43,8 +43,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         List<String> excludePaths = new ArrayList<>();
         excludePaths.add("/");
         excludePaths.add("/user/login");
+        excludePaths.add("/user/register");
         excludePaths.add("/h2-console**");
         excludePaths.add("/static/**");
+        excludePaths.add("/error");
         excludePaths.add("/js/**");
         excludePaths.add("/css/**");
         registry.addInterceptor(new LoginInterceptor())

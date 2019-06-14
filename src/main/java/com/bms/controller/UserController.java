@@ -58,13 +58,18 @@ public class UserController {
         return "user/login";
     }
 
-    @RequestMapping("register")
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+    public String toRegister() {
+        return "register";
+    }
+
+    @RequestMapping(value = "register", method = RequestMethod.POST)
     public String register(String username, String password, Integer gender, String date) throws Exception {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate birthday = LocalDate.parse(date, formatter);
         User user = new User(null, username, password, gender, birthday);
         userService.register(user);
-        return "user/login";
+        return "redirect:/user/login";
     }
 
 
