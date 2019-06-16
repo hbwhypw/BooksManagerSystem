@@ -23,6 +23,14 @@ public class BookController {
         return "book/list";
     }
 
+    @PostMapping("find")
+    public String get(Model model, @ModelAttribute Book book) {
+        List<Book> list = bookService.findBook(book);
+        model.addAttribute("list", list);
+        model.addAttribute("book", book);
+        return "book/list";
+    }
+
     @RequestMapping("/toList")
     public String toList() {
         return "redirect:/main";

@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="${path}/css/book.css"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <script src="${path}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="container">
 <div class="p-3 mb-2 bg-primary text-white">
@@ -22,13 +23,13 @@
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">用户名：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="username" name="username" placeholder="用户名" required>
+                <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required>
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-2 control-label">密码：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="password" name="password" placeholder="密码" required>
+                <input type="text" class="form-control" id="password" name="password" placeholder="请输入密码" required>
             </div>
         </div>
         <div class="form-group">

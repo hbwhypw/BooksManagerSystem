@@ -2,13 +2,14 @@ package com.bms.service;
 
 import com.bms.dao.BookRepository;
 import com.bms.domain.Book;
-import com.bms.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.data.domain.ExampleMatcher.StringMatcher.CONTAINING;
 
 /**
  * @author ypw
@@ -20,6 +21,14 @@ public class BookService {
 
     public List<Book> getBookList() {
         return bookRepository.findAll();
+    }
+
+    public List<Book> findBook(Book book) {
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withStringMatcher(CONTAINING)
+                .withIgnoreNullValues();
+        Example<Book> example = Example.of(book, matcher);
+        return bookRepository.findAll(example);
     }
 
     public void add(Book book) {

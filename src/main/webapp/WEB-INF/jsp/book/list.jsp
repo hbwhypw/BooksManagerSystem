@@ -22,18 +22,19 @@
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
         <div class="container content_width">
-            <div class="person_search">
-                <div class="search_input">
-                    <div class="input-group mb-3">
-                        <span>姓名：</span>
-                        <input id="Ktext" type="text" class="form-control" placeholder="请输入姓名">
+            <form action="${path}/book/find" method="post">
+                <div class="person_search">
+                    <div class="search_input">
+                        <div class="input-group mb-3">
+                            <span>书名：</span>
+                            <input id="Ktext" type="text" name="bookName" class="form-control" placeholder="请输入书名" value="${book.bookName}">
+                        </div>
+                    </div>
+                    <div class="search_input">
+                        <button class="btn btn-primary search_btn" type="submit" id="search_btn">查询</button>
                     </div>
                 </div>
-                <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
-                    <button class="btn btn-primary search_btn" type="button" id="back_btn">重置</button>
-                </div>
-            </div>
+            </form>
             <div class="line"></div>
         </div>
         <!--添加按钮及bootstrap的模态框-->

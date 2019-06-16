@@ -8,6 +8,9 @@
     <title>修改图书信息</title>
     <link rel="stylesheet" type="text/css" href="${path}/css/book.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <script src="${path}/js/jquery.min.js"></script>
+    <script src="${path}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${path}/js/bootbox.min.js"></script>
 </head>
 <body class="container">
 <div class="p-3 mb-2 bg-primary text-white">

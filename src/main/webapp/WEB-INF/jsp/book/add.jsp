@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="${path}/css/book.css"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <script src="${path}/js/jquery.min.js"></script>
+    <script src="${path}/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${path}/js/bootbox.min.js"></script>
 </head>
 <body class="container">
 <div class="p-3 mb-2 bg-primary text-white">
@@ -24,19 +27,19 @@
         <div class="form-group">
             <label for="bookName" class="col-sm-2 control-label">书名：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="bookName" name="bookName" placeholder="请输入书名">
+                <input type="text" class="form-control" id="bookName" name="bookName" placeholder="请输入书名" required>
             </div>
         </div>
         <div class="form-group">
             <label for="author" class="col-sm-2 control-label">作者：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="author" name="author" placeholder="请输入作者">
+                <input type="text" class="form-control" id="author" name="author" placeholder="请输入作者" required>
             </div>
         </div>
         <div class="form-group">
             <label for="introduction" class="col-sm-2 control-label">简介：</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="introduction" name="introduction" placeholder="请输入简介">
+                <input type="text" class="form-control" id="introduction" name="introduction" placeholder="请输入简介" required>
             </div>
         </div>
         <input class="btn btn-primary" type="submit" value="保存">
