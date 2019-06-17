@@ -51,7 +51,7 @@ public class Book implements Serializable {
     private LocalDate createTime;
 
     /**
-     * 创建时间
+     * 修改时间
      */
     @Column(nullable = true)
     @LastModifiedDate
