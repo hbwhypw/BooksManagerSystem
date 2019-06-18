@@ -17,7 +17,7 @@
         <div class="containerT">
             <h1>用户登录</h1>
             <form class="form" id="entry_form" action="${path}/user/login" method="post">
-                <input type="text" placeholder="用户名" id="entry_name" name="username" value="spp">
+                <input type="text" placeholder="用户名" id="entry_name" name="username" value="admin">
                 <input type="password" placeholder="密码" id="entry_password" name="password" value="123456">
                 <button type="button" id="entry_btn" >登录</button>
                 <div id="prompt" class="prompt">${msg}</div>
