@@ -20,6 +20,7 @@
                 <input type="text" placeholder="用户名" id="entry_name" name="username" value="admin">
                 <input type="password" placeholder="密码" id="entry_password" name="password" value="123456">
                 <button type="button" id="entry_btn" >登录</button>
+                <button type="button" id="register_btn" >没有账号，去注册</button>
                 <div id="prompt" class="prompt">${msg}</div>
             </form>
         </div>
@@ -32,6 +33,9 @@
         $("#entry_name").focus();
         $("#entry_btn").click(function () {
             $("#entry_form").submit();
+        });
+        $("#register_btn").click(function () {
+            window.location.href = "/user/register";
         });
         $(document).keydown(function (event) {
             if (event.keyCode == 13) {
